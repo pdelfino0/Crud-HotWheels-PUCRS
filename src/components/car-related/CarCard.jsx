@@ -12,7 +12,7 @@ function CarCard(props) {
     const handleSave = (index) => {
         props.setNewCarInfo(carInfo);
         props.onEdit(index);
-        setEditFormVisible(false); // Close the edit form after saving
+        setEditFormVisible(false);
     }
 
     const handleInputChange = (e, field) => {
