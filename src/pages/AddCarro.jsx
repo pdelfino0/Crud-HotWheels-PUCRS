@@ -31,9 +31,9 @@ function AddCarro(props) {
             </div>
 
             <CarForm onSubmit={handleSubmit}>
-                <CarInput label="Cor" name="cor" value={carro.cor} onChange={handleChange} />
-                <CarInput label="Marca" name="marca" value={carro.marca} onChange={handleChange} />
                 <CarInput label="Modelo" name="modelo" value={carro.modelo} onChange={handleChange} />
+                <CarInput label="Marca" name="marca" value={carro.marca} onChange={handleChange} />
+                <CarInput label="Cor" name="cor" value={carro.cor} onChange={handleChange} />
                 <CarInput label="Ano" name="ano" value={carro.ano} onChange={handleChange} />
             </CarForm>
         </>

@@ -15,7 +15,7 @@ function App() {
     };
 
     return (
-        <div className="bg-gradient-to-tl from-red-600 to-yellow-600 h-screen pt-10">
+        <div className="bg-gradient-to-tl from-red-600 to-yellow-600 min-h-screen h-full pt-10">
             <Router>
                 <Navbar/>
                 <Routes>
