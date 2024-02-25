@@ -1,21 +1,25 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import CarInput from "../components/car-related/CarInput";
 import CarForm from "../components/car-related/CarForm";
 
 function AddCarro(props) {
-    const [cor, setCor] = useState("");
-    const [marca, setMarca] = useState("");
-    const [modelo, setModelo] = useState("");
-    const [ano, setAno] = useState("");
+    const [carro, setCarro] = useState({
+        cor: "",
+        marca: "",
+        modelo: "",
+        ano: ""
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setCarro(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
 
     const handleSubmit = () => {
-        const newCar = {
-            cor: cor,
-            marca: marca,
-            modelo: modelo,
-            ano: ano
-        };
-        props.onChange(newCar);
+        props.onChange(carro);
     };
 
     return (
@@ -26,11 +30,11 @@ function AddCarro(props) {
                 </p>
             </div>
 
-            <CarForm onSubmit={handleSubmit} cor={cor} marca={marca} modelo={modelo} ano={ano}>
-                <CarInput label="Modelo" value={modelo} onChange={(e) => setModelo(e.target.value)}/>
-                <CarInput label="Marca" value={marca} onChange={(e) => setMarca(e.target.value)}/>
-                <CarInput label="Cor" value={cor} onChange={(e) => setCor(e.target.value)}/>
-                <CarInput label="Ano" value={ano} onChange={(e) => setAno(e.target.value)}/>
+            <CarForm onSubmit={handleSubmit}>
+                <CarInput label="Cor" name="cor" value={carro.cor} onChange={handleChange} />
+                <CarInput label="Marca" name="marca" value={carro.marca} onChange={handleChange} />
+                <CarInput label="Modelo" name="modelo" value={carro.modelo} onChange={handleChange} />
+                <CarInput label="Ano" name="ano" value={carro.ano} onChange={handleChange} />
             </CarForm>
         </>
     );
