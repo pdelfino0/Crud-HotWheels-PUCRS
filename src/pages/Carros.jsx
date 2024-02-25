@@ -1,12 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CarCard from "../components/car-related/CarCard";
 
 function Carros(props) {
+
+    const [newCarInfo, setNewCarInfo] = useState({modelo: '', marca: '', ano: '', cor: ''});
 
     const returnEmptyMessage = () => {
         return (
             <p className="text-white text-center"> Você não possui nenhum carro na sua coleção ainda. </p>
         );
+    }
+
+    function handleEdit(index) {
+        const newCarCollection = props.carCollection.map((car, carIndex) => {
+            if (carIndex === index) {
+                return {...newCarInfo}; // Spread the properties of newCarInfo
+            }
+            return car;
+        });
+
+        props.setCarCollection(newCarCollection);
     }
 
     function handleDelete(index) {
@@ -21,7 +34,8 @@ function Carros(props) {
                 <div className="px-10 py-10">
                     {props.carCollection.length === 0 ? returnEmptyMessage() : props.carCollection.map((carro, index) => (
                         <div>
-                            <CarCard key={index} carInfo={carro} onDelete={() => handleDelete(index)}/>
+                            <CarCard key={index} carInfo={carro} onEdit={() => handleEdit(index)}
+                                     setNewCarInfo={setNewCarInfo} onDelete={() => handleDelete(index)}/>
                         </div>
                     ))
                     }

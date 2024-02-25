@@ -10,14 +10,12 @@ import Footer from "./components/Footer";
 
 function App() {
     const [carros, setCarros] = useState([]);
-
     const handleSubmit = (newCar) => {
         setCarros([...carros, newCar]);
     };
 
-
     return (<div
-        className="bg-gradient-to-tl from-red-600 to-yellow-600 min-h-screen h-full pt-10 mb-autautautautautautautautautauto">
+        className="bg-gradient-to-tl from-red-600 to-yellow-600 min-h-screen h-full pt-10 mb-auto">
         <Router>
             <Navbar/>
             <Routes>
