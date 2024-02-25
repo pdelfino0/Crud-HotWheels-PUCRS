@@ -3,7 +3,7 @@ import React from 'react';
 function Sobre(props) {
 
     return (
-        <div className="mx-auto mt-10 rounded-xl max-w-3xl bg-neutral-800/30">
+        <div className="mx-auto mt-10 rounded-xl max-w-3xl bg-neutral-800/30 mb-auto">
             <div className="text-white p-8">
                 <h2 className="text-2xl font-bold mb-4">Sobre este projeto</h2>
                 <p className="text-lg">

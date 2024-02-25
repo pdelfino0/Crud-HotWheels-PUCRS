@@ -6,6 +6,7 @@ import Sobre from "./pages/Sobre";
 import Carros from "./pages/Carros";
 import AddCarro from "./pages/AddCarro";
 import {useState} from "react";
+import Footer from "./components/Footer";
 
 function App() {
     const [carros, setCarros] = useState([]);
@@ -14,8 +15,10 @@ function App() {
         setCarros([...carros, newCar]);
     };
 
+
     return (
-        <div className="bg-gradient-to-tl from-red-600 to-yellow-600 min-h-screen h-full pt-10">
+        <div
+            className="bg-gradient-to-tl from-red-600 to-yellow-600 min-h-screen h-full pt-10 mb-autautautautautautautautautauto">
             <Router>
                 <Navbar/>
                 <Routes>
@@ -25,6 +28,7 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                 </Routes>
             </Router>
+            <Footer/>
         </div>
     );
 }

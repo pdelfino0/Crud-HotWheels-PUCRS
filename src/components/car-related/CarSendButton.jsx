@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function CarSendButton(props) {
-    const [showSuccess, setShowSuccess] = useState(false);
 
     return (
         <button
