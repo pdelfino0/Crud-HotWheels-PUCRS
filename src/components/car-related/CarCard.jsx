@@ -1,7 +1,7 @@
 import React from 'react';
 
 function CarCard(props) {
-    const imgPath = './placeholder.png'; // Adjust the image path accordingly
+    const imgPath = './placeholder.png';
 
     return (
         <div className="mx-auto mt-10 bg-neutral-800/30 rounded-xl max-w-3xl overflow-hidden pb-10">

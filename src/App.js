@@ -16,21 +16,19 @@ function App() {
     };
 
 
-    return (
-        <div
-            className="bg-gradient-to-tl from-red-600 to-yellow-600 min-h-screen h-full pt-10 mb-autautautautautautautautautauto">
-            <Router>
-                <Navbar/>
-                <Routes>
-                    <Route path="/sobre" element={<Sobre/>}/>
-                    <Route path="/carros" element={<Carros carCollection={carros}/>}/>
-                    <Route path="/add-carro" element={<AddCarro onChange={handleSubmit}/>}/>
-                    <Route path="/" element={<Home/>}/>
-                </Routes>
-            </Router>
-            <Footer/>
-        </div>
-    );
+    return (<div
+        className="bg-gradient-to-tl from-red-600 to-yellow-600 min-h-screen h-full pt-10 mb-autautautautautautautautautauto">
+        <Router>
+            <Navbar/>
+            <Routes>
+                <Route path="/sobre" element={<Sobre/>}/>
+                <Route path="/carros" element={<Carros carCollection={carros} setCarCollection={setCarros}/>}/>
+                <Route path="/add-carro" element={<AddCarro onChange={handleSubmit}/>}/>
+                <Route path="/" element={<Home/>}/>
+            </Routes>
+        </Router>
+        <Footer/>
+    </div>);
 }
 
 export default App;
