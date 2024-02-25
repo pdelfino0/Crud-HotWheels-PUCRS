@@ -14,9 +14,8 @@ function Footer(props) {
                 </div>
                 <div className="ml-6">
                     <div className="flex space-x-4">
-                        <a href="#" className="text-white"><FaTwitter/></a>
                         <a href="https://www.instagram.com/pedrodelfino__/" className="text-white"><FaInstagram/></a>
-                        <a href="https://www.instagram.com/pedrodelfino__/" className="text-white"><FaGithub/></a>
+                        <a href="https://github.com/pdelfino0" className="text-white"><FaGithub/></a>
                     </div>
                 </div>
             </div>
