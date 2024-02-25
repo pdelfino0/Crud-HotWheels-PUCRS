@@ -1,5 +1,5 @@
-import {useEffect} from "react";
-import {useLocation} from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function usePageTitle() {
     const location = useLocation();
@@ -14,5 +14,7 @@ export default function usePageTitle() {
         } else if (location.pathname === "/add-carro") {
             document.title = "Adicionar Carro - Crud de HotWheels";
         }
-    }, [location]);
+    }, [location.pathname]);
+
+    return location.pathname; // Return the current path
 }
