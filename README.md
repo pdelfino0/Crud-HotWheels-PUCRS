@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+Esse é um projeto da disciplina de Desenvolvimento Front-end do curso de Análise e Desenvolvimento de Sistemas da
+Univerdade Católica de Porto Alegre.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O intuito é elaborar um front-end para um CRUD de HotWheels, no qual é possível visualizar, adicionar, editar e excluir
+carros.
 
-## Available Scripts
+## Tecnologias utilizadas
 
-In the project directory, you can run:
+- React
+- React Router (ferramenta que possibilita o roteamento de páginas)
+- Tailwind CSS (framework de CSS)
 
-### `npm start`
+## Como rodar o projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Clone o repositório
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+git clone git@github.com:pdelfino0/Crud-HotWheels-PUCRS.git
+```
 
-### `npm test`
+### Acesse a pasta do projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd Crud-HotWheels-PUCRS
+```
 
-### `npm run build`
+### Instale as dependências
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Rode o projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+**O projeto estará disponível em [http://localhost:3000](http://localhost:3000)**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Estrutura de pastas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **src**: pasta que contém os arquivos do projeto
+    - **components**: pasta que contém os componentes do projeto
+        - **car-related**: pasta que contém os componentes relacionados aos carros (exceto a página de listagem)
+        - **navbar**: pasta que contém o componente da barra de navegação e uma hook que auxilia a trocar o title da
+          página atual
+        - **footer**: pasta que contém o componente do rodapé
+    - **pages**: pasta que contém as páginas do projeto
+    - **App.js**: arquivo que contém o componente principal do projeto
+    - **index.js**: arquivo que contém a renderização do projeto
+    - **tailwind.config.js**: arquivo que contém a configuração do Tailwind CSS
+    - **README.md**: arquivo que contém a documentação do projeto (este arquivo)
+    - **package.json**: arquivo que contém as dependências do projeto
+  
