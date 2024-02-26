@@ -78,8 +78,6 @@ npm start
         - Ao clicar no botão de adicionar, é adicionado um novo carro ao state que está definido no App.js
     - **CarInput**: input que é utilizado no CarForm
         - Esse componente é utilizado para a entrada de dados do carro que será adicionado
-    - **CarSendButton**: botão que é utilizado no CarForm
-        - Esse componente é utilizado para enviar os dados do carro que será adicionado
 - **Sobre**: página que contém informações sobre o projeto
 - **Home**: página inicial do projeto
 - **Carros**: página onde é possível visualizar os dados já adicionados, bem como edita-los e exclui-los
