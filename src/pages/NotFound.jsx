@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import usePageTitle from '../components/navbar/usePageTitle';
 
 function NotFound() {
-    const currentPath = usePageTitle();
 
     return (
         <div className="mx-auto mt-10 rounded-xl max-w-3xl bg-neutral-800/30 mb-auto">
