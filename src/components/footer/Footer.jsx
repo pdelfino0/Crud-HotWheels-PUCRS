@@ -3,7 +3,7 @@ import {FaGithub, FaTwitter, FaInstagram} from 'react-icons/fa';
 
 function Footer(props) {
     return (
-        <footer className=" sticky top-[100vh] bg-gray-900 text-white py-6 bottom-0 w-full">
+        <footer className=" sticky top-[100vh] bg-gradient-to-t from-slate-900/60 to-slate-900/0 text-white py-6 bottom-0 w-full">
             <div className="container mx-auto flex justify-center items-center">
                 <div className="text-center">
                     <p>{new Date().getFullYear()}</p>

@@ -8,7 +8,7 @@ function Navbar() {
 
     return (
         <nav
-            className="justify-center mx-auto rounded-xl max-w-screen-md bg-gradient-to-r from-red-800 to-yellow-800 p-4 shadow-md">
+            className="justify-center mx-auto rounded-xl max-w-screen-md bg-gradient-to-r from-red-600 to-yellow-600 p-4 shadow-md">
             <ul className="mx-10 flex justify-between">
                 <li>
                     <Link to="/"
