@@ -79,11 +79,11 @@ const CarForm = ({onSubmit}) => {
             <form onSubmit={handleSubmit}>
                 <div className="px-10 py-10">
                     <CarInput
-                        label="Cor"
-                        name="cor"
-                        value={carData.cor}
+                        label="Modelo"
+                        name="modelo"
+                        value={carData.modelo}
                         onChange={handleChange}
-                        errorMessage={errors.cor}
+                        errorMessage={errors.modelo}
                     />
                     <CarInput
                         label="Marca"
@@ -93,11 +93,11 @@ const CarForm = ({onSubmit}) => {
                         errorMessage={errors.marca}
                     />
                     <CarInput
-                        label="Modelo"
-                        name="modelo"
-                        value={carData.modelo}
+                        label="Cor"
+                        name="cor"
+                        value={carData.cor}
                         onChange={handleChange}
-                        errorMessage={errors.modelo}
+                        errorMessage={errors.cor}
                     />
                     <CarInput
                         label="Ano"
