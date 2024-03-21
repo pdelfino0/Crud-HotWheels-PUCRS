@@ -10,10 +10,7 @@ import {useState} from "react";
 import Footer from "./components/footer/Footer";
 
 function App() {
-    const [carros, setCarros] = useState([]);
-    const handleSubmit = (newCar) => {
-        setCarros([...carros, newCar]);
-    };
+
 
     return (<div
         className="bg-gradient-to-tl from-red-800 to-yellow-800 z-0 min-h-screen h-full pt-10 mb-auto">
@@ -21,8 +18,8 @@ function App() {
             <Navbar/>
             <Routes>
                 <Route path="/sobre" element={<Sobre/>}/>
-                <Route path="/carros" element={<Carros carCollection={carros} setCarCollection={setCarros}/>}/>
-                <Route path="/add-carro" element={<AddCarro onChange={handleSubmit}/>}/>
+                <Route path="/carros" element={<Carros/>}/>
+                <Route path="/add-carro" element={<AddCarro/>}/>
                 <Route path="/" element={<Home/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Routes>

@@ -1,4 +1,5 @@
 import {useState} from "react";
+import axios from "axios";
 
 function CarCard({carInfo, onEdit, onDelete}) {
     const [editFormVisible, setEditFormVisible] = useState(false);
@@ -8,9 +9,20 @@ function CarCard({carInfo, onEdit, onDelete}) {
         setEditFormVisible(!editFormVisible);
     };
 
-    const handleSave = () => {
-        onEdit(carData);
-        setEditFormVisible(false);
+
+    const handleDelete = async => {
+        let url = `http://localhost:5000/cars/${carInfo.id}`;
+        axios.delete(url)
+            .then(response => {
+                onDelete();
+            })
+    };
+
+    const handleSave = async () => {
+        await axios.put(`http://localhost:5000/cars/${carInfo.id}`, carData).then(response => {
+            onEdit();
+        })
+
     };
 
     const handleInputChange = (e, field) => {
@@ -23,15 +35,15 @@ function CarCard({carInfo, onEdit, onDelete}) {
             <img src={`./placeholder.png`} alt={`Carro ${carInfo.modelo}`} className="w-full h-auto"/>
             <div className="flex items-center justify-between px-6 py-4">
                 <div>
-                    <div className="font-bold text-xl mb-2">{carInfo.modelo}</div>
-                    <p className="text-gray-300 text-sm">Marca: {carInfo.marca}</p>
-                    <p className="text-gray-300 text-sm">Ano: {carInfo.ano}</p>
-                    <p className="text-gray-300 text-sm">Cor: {carInfo.cor}</p>
+                    <div className="font-bold text-xl mb-2">{carInfo.name}</div>
+                    <p className="text-gray-300 text-sm">Marca: {carInfo.brand}</p>
+                    <p className="text-gray-300 text-sm">Ano: {carInfo.year}</p>
+                    <p className="text-gray-300 text-sm">Cor: {carInfo.color}</p>
                 </div>
 
                 <div className="flex flex-col gap-4">
                     <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                            onClick={onDelete}>Deletar
+                            onClick={handleDelete}>Deletar
                     </button>
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             onClick={handleEdit}>Editar
@@ -43,23 +55,23 @@ function CarCard({carInfo, onEdit, onDelete}) {
                     className="flex text-black flex-col items-center justify-center mt-4 px-6 py-4 bg-gray-100 rounded-xl">
                     <input className="mb-2 px-3 py-2 border border-gray-300 rounded-md w-full"
                            type="text"
-                           value={carData.modelo}
-                           onChange={(e) => handleInputChange(e, 'modelo')}
+                           value={carData.name}
+                           onChange={(e) => handleInputChange(e, 'name')}
                            placeholder="Modelo"/>
                     <input className="mb-2 px-3 py-2 border border-gray-300 rounded-md w-full"
                            type="text"
-                           value={carData.marca}
-                           onChange={(e) => handleInputChange(e, 'marca')}
+                           value={carData.brand}
+                           onChange={(e) => handleInputChange(e, 'brand')}
                            placeholder="Marca"/>
                     <input className="mb-2 px-3 py-2 border border-gray-300 rounded-md w-full"
                            type="text"
-                           value={carData.ano}
-                           onChange={(e) => handleInputChange(e, 'ano')}
+                           value={carData.year}
+                           onChange={(e) => handleInputChange(e, 'year')}
                            placeholder="Ano"/>
                     <input className="mb-2 px-3 py-2 border border-gray-300 rounded-md w-full"
                            type="text"
-                           value={carData.cor}
-                           onChange={(e) => handleInputChange(e, 'cor')}
+                           value={carData.color}
+                           onChange={(e) => handleInputChange(e, 'color')}
                            placeholder="Cor"/>
                     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                             onClick={handleSave}>Salvar

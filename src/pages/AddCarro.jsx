@@ -1,10 +1,8 @@
 import React from 'react';
-import CarForm from '../components/car-related/CarForm';
+import CarForm from '../components/car/CarForm';
+import axios from "axios";
 
-const AddCarro = ({onChange}) => {
-    const handleSubmit = (carroData) => {
-        onChange(carroData);
-    };
+const AddCarro = () => {
 
     return (
         <>
@@ -14,7 +12,7 @@ const AddCarro = ({onChange}) => {
                         Aqui você pode adicionar um carro à sua coleção de HotWheels.
                     </p>
                 </div>
-                <CarForm onSubmit={handleSubmit}/>
+                <CarForm/>
             </div>
         </>
     );

@@ -1,34 +1,43 @@
 import React, {useState} from 'react';
 import CarInput from './CarInput';
+import axios from "axios";
+import useIdIncrementer from "../../hooks/useIdIncrementer";
 
-const CarForm = ({onSubmit}) => {
+const CarForm = () => {
+    const {id, incrementId} = useIdIncrementer();
     const [carData, setCarData] = useState({
-        cor: "",
-        marca: "",
-        modelo: "",
-        ano: ""
+        id: 0, color: "", brand: "", name: "", year: ""
     });
 
     const [errors, setErrors] = useState({
-        cor: '',
-        marca: '',
-        modelo: '',
-        ano: ''
+        color: '', brand: '', name: '', year: ''
     });
+
+    const [sendMessageVisible, setSendMessageVisible] = useState(false);
 
     const handleChange = (e) => {
         const {name, value} = e.target;
         setCarData(prevState => ({
-            ...prevState,
-            [name]: value
+            ...prevState, [name]: value
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (validateInputs()) {
-            onSubmit(carData);
-            resetForm();
+            try {
+                carData.id = id;
+                incrementId();
+                const response = await axios.post('http://localhost:5000/cars', carData);
+                resetForm();
+                setSendMessageVisible(true);
+                setTimeout(() => {
+                    setSendMessageVisible(false);
+                }, 5000);
+            } catch (e) {
+                console.error(e);
+            }
         }
     };
 
@@ -37,20 +46,20 @@ const CarForm = ({onSubmit}) => {
         const newErrors = {};
 
         // Validate each input field and set errors if necessary
-        if (!carData.cor.trim()) {
-            newErrors.cor = 'Color is required';
+        if (!carData.color.trim()) {
+            newErrors.color = 'A cor é obrigatória';
             valid = false;
         }
-        if (!carData.marca.trim()) {
-            newErrors.marca = 'Brand is required';
+        if (!carData.brand.trim()) {
+            newErrors.brand = 'A marca é obrigatória';
             valid = false;
         }
-        if (!carData.modelo.trim()) {
-            newErrors.modelo = 'Model is required';
+        if (!carData.name.trim()) {
+            newErrors.name = 'O modelo é obrigatório';
             valid = false;
         }
-        if (!carData.ano.trim()) {
-            newErrors.ano = 'Year is required';
+        if (!carData.year.trim()) {
+            newErrors.year = 'O ano é obrigatório';
             valid = false;
         }
 
@@ -61,50 +70,47 @@ const CarForm = ({onSubmit}) => {
 
     const resetForm = () => {
         setCarData({
-            cor: "",
-            marca: "",
-            modelo: "",
-            ano: ""
+            id: 0, color: "", brand: "", name: "", year: ""
         });
         setErrors({
-            cor: '',
-            marca: '',
-            modelo: '',
-            ano: ''
+            color: '', brand: '', name: '', year: ''
         });
     };
 
-    return (
+    return (<>
+        {sendMessageVisible && <div className="fixed top-0 right-0 p-4 m-4 bg-green-500 text-white rounded-xl">
+            Carro adicionado com sucesso!
+        </div>}
         <div className="mx-auto text-white mt-10 rounded-xl max-w-3xl bg-neutral-800/30">
             <form onSubmit={handleSubmit}>
                 <div className="px-10 py-10">
                     <CarInput
                         label="Modelo"
-                        name="modelo"
-                        value={carData.modelo}
+                        name="name"
+                        value={carData.name}
                         onChange={handleChange}
-                        errorMessage={errors.modelo}
+                        errorMessage={errors.name}
                     />
                     <CarInput
                         label="Marca"
-                        name="marca"
-                        value={carData.marca}
+                        name="brand"
+                        value={carData.brand}
                         onChange={handleChange}
-                        errorMessage={errors.marca}
+                        errorMessage={errors.brand}
                     />
                     <CarInput
                         label="Cor"
-                        name="cor"
-                        value={carData.cor}
+                        name="color"
+                        value={carData.color}
                         onChange={handleChange}
-                        errorMessage={errors.cor}
+                        errorMessage={errors.color}
                     />
                     <CarInput
                         label="Ano"
-                        name="ano"
-                        value={carData.ano}
+                        name="year"
+                        value={carData.year}
                         onChange={handleChange}
-                        errorMessage={errors.ano}
+                        errorMessage={errors.year}
                     />
                     <div className="flex items-center justify-between mt-4">
                         <button
@@ -117,7 +123,7 @@ const CarForm = ({onSubmit}) => {
                 </div>
             </form>
         </div>
-    );
+    </>);
 };
 
 
