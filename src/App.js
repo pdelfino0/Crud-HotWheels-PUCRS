@@ -6,7 +6,6 @@ import Sobre from "./pages/Sobre";
 import Carros from "./pages/Carros";
 import NotFound from "./pages/NotFound";
 import AddCarro from "./pages/AddCarro";
-import {useState} from "react";
 import Footer from "./components/footer/Footer";
 
 function App() {

@@ -1,6 +1,5 @@
 import React from 'react';
 import CarForm from '../components/car/CarForm';
-import axios from "axios";
 
 const AddCarro = () => {
 

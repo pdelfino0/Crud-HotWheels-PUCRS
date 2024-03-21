@@ -3,11 +3,11 @@ const fs = require('fs');
 
 
 var router = express.Router();
-const filePath = './data/carsData.json'
+const filePath = 'hotwheels-api/data/carsData.json'
 
 /// Rota para o endpoint GET que lê os dados do arquivo JSON
 router.get('/', (req, res) => {
-    fs.readFile('./data/carsData.json', 'utf8', (err, data) => {
+    fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error(err);
             return res.status(500).json({error: 'Erro ao ler arquivo JSON'});

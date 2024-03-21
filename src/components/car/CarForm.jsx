@@ -29,7 +29,7 @@ const CarForm = () => {
             try {
                 carData.id = id;
                 incrementId();
-                const response = await axios.post('http://localhost:5000/cars', carData);
+                await axios.post('http://localhost:5000/cars', carData);
                 resetForm();
                 setSendMessageVisible(true);
                 setTimeout(() => {
