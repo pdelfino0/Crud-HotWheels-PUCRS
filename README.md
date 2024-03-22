@@ -38,7 +38,7 @@ npm install
 npm start
 ```
 
-**O projeto estará disponível em [http://localhost:3000](http://localhost:3000)**
+**O projeto estará disponível em [http://localhost:5000](http://localhost:3000)**
 
 ## Estrutura de pastas
 
@@ -49,7 +49,7 @@ npm start
           página atual
         - **footer**: pasta que contém o componente do rodapé
     - **pages**: pasta que contém as páginas do projeto
-    - **App.js**: arquivo que contém o componente principal do projeto
+    - **App.jsx**: arquivo que contém o componente principal do projeto
     - **index.js**: arquivo que contém a renderização do projeto
     - **tailwind.config.js**: arquivo que contém a configuração do Tailwind CSS
     - **README.md**: arquivo que contém a documentação do projeto (este arquivo)
@@ -71,11 +71,11 @@ npm start
     - **CarCard**: card que contém as informações de um carro, bem como botões para editar e excluir
         - Nesse componente há um formulario escondido que é ativado ao clicar no botão de editar o carro em questão que
           está
-          no state definido no App.js
-        - Ao clicar no botão de excluir, é excluido o carro do state que está definido no App.js
-    - **CarForm**: formulário que é utilizado para adicionar um novo carro ao state que está definido no App.js
+          no state definido no App.jsx
+        - Ao clicar no botão de excluir, é excluido o carro do state que está definido no App.jsx
+    - **CarForm**: formulário que é utilizado para adicionar um novo carro ao state que está definido no App.jsx
         - Esse componente é utilizado na página de adicionar carro
-        - Ao clicar no botão de adicionar, é adicionado um novo carro ao state que está definido no App.js
+        - Ao clicar no botão de adicionar, é adicionado um novo carro ao state que está definido no App.jsx
     - **CarInput**: input que é utilizado no CarForm
         - Esse componente é utilizado para a entrada de dados do carro que será adicionado
 - **Sobre**: página que contém informações sobre o projeto

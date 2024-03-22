@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 const useIdIncrementer = () => {
-    const [id, setId] = useState(7);
+    const [id, setId] = useState(0);
 
     const incrementId = () => {
         setId(prevId => prevId + 1);
