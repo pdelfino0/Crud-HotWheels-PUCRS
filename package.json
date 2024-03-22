@@ -19,7 +19,6 @@
     "start-react": "react-scripts start",
     "server": "node ./hotwheels-api/bin/www",
     "build": "react-scripts build",
-    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
